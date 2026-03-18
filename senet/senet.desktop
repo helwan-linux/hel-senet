@@ -2,9 +2,12 @@
 Name=Senet Pro
 Comment=Ancient Egyptian Board Game by Saeed Badreldin
 Exec=/usr/bin/senet_pro
-Icon=hel-senet
+# غيرنا اسم الأيقونة ليتطابق مع اسم الملف التنفيذي والـ Class
+Icon=senet_pro
 Terminal=false
 Type=Application
 Categories=Game;BoardGame;Education;
 Keywords=senet;egypt;board;strategy;
 GenericName=Board Game
+# السطر ده هو "كلمة السر" لظهورها في التاسك بار
+StartupWMClass=senet_pro
