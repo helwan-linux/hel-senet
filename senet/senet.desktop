@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Senet Pro
-Comment=Ancient Egyptian Board Game
-Exec=senet_pro
-Icon=icon.svg
+Comment=Ancient Egyptian Board Game by Saeed Badreldin
+Exec=/usr/bin/senet_pro
+Icon=hel-senet
 Terminal=false
 Type=Application
 Categories=Game;BoardGame;Education;
