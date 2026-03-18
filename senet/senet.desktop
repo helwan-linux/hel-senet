@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Senet Pro
+Comment=Ancient Egyptian Board Game
+Exec=senet_pro
+Icon=icon.svg
+Terminal=false
+Type=Application
+Categories=Game;BoardGame;Education;
+Keywords=senet;egypt;board;strategy;
+GenericName=Board Game

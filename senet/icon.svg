@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#4a3b2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c2c2c;stop-opacity:1" />
+    </radialGradient>
+    
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f1c40f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8860b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="256" cy="256" r="250" stroke="url(#goldGrad)" stroke-width="12" fill="url(#grad1)" />
+  
+  <circle cx="256" cy="256" r="220" stroke="#d4af37" stroke-width="2" fill="none" stroke-dasharray="10,15" opacity="0.6"/>
+
+  <g transform="translate(256, 230) scale(1.1)">
+    <path d="M0,-120 C-40,-120 -60,-80 -60,-50 C-60,-20 -30,0 0,0 C30,0 60,-20 60,-50 C60,-80 40,-120 0,-120 Z 
+             M0,-100 C25,-100 40,-75 40,-50 C40,-25 20,-15 0,-15 C-20,-15 -40,-25 -40,-50 C-40,-75 -25,-100 0,-100 Z" 
+          fill="url(#goldGrad)" />
+    <rect x="-15" y="0" width="30" height="130" fill="url(#goldGrad)" />
+    <rect x="-70" y="30" width="140" height="25" fill="url(#goldGrad)" rx="5" />
+
+    <circle cx="-40" cy="90" r="15" fill="#e67e22" stroke="#d35400" stroke-width="3"/>
+    <circle cx="0" cy="90" r="15" fill="#e67e22" stroke="#d35400" stroke-width="3"/>
+    <circle cx="40" cy="90" r="15" fill="#3498db" stroke="#2980b9" stroke-width="3"/>
+  </g>
+
+  <defs>
+    <path id="textPath" d="M 86,380 A 190,190 0 0,0 426,380" />
+  </defs>
+  
+  <text font-family="Monospace, Courier, serif" font-size="64" font-weight="bold" fill="url(#goldGrad)" text-anchor="middle">
+    <textPath href="#textPath" startOffset="50%">
+      HEL-SENET
+    </textPath>
+  </text>
+  
+  <text x="256" y="490" font-family="Sans-serif" font-size="14" fill="#bdc3c7" text-anchor="middle" opacity="0.7">
+    Helwan Linux Project
+  </text>
+
+</svg>
