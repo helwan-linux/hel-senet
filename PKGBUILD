@@ -1,7 +1,7 @@
 # Maintainer: Saeed Badreldin <saeed@helwan-linux.org>
 pkgname=hel-senet
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Ancient Egyptian Board Game (Senet) for Helwan Linux"
 arch=('x86_64')
 url="https://github.com/helwan-linux/hel-senet"
