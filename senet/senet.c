@@ -263,26 +263,28 @@ void start_demo(GtkWidget *widget, gpointer data) {
 void show_about_senet(GtkWidget *widget, gpointer data) {
     GtkWidget *dialog = gtk_about_dialog_new();
     GdkPixbuf *logo = gdk_pixbuf_new_from_file_at_size("icon.svg", 64, 64, NULL);
+    
     gtk_about_dialog_set_program_name(GTK_ABOUT_DIALOG(dialog), "Senet Pro");
     gtk_about_dialog_set_version(GTK_ABOUT_DIALOG(dialog), "1.0 Professional");
     gtk_about_dialog_set_copyright(GTK_ABOUT_DIALOG(dialog), "© 2026 Saeed Badreldin");
     gtk_about_dialog_set_logo(GTK_ABOUT_DIALOG(dialog), logo);
     gtk_about_dialog_set_comments(GTK_ABOUT_DIALOG(dialog), "Ancient Egyptian Board Game for Helwan Linux.");
     gtk_about_dialog_set_website(GTK_ABOUT_DIALOG(dialog), "https://helwan-linux.github.io/helwanlinux/");
+    
     gtk_dialog_run(GTK_DIALOG(dialog));
-    if (logo) g_object_unref(logo); 
     gtk_widget_destroy(dialog);
 }
+
 
 void show_help_senet(GtkWidget *widget, gpointer data) {
     GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(data),
         GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,
         "Senet Quick Rules:\n\n"
-        "• Objective: Exit all 5 pieces to win.\n"
-        "• Movement: 1, 4, 5 grant extra throw.\n"
-        "• Protection: Pairs side-by-side are safe.\n"
-        "• The Water: Square 27 returns you to 15.");
-    gtk_window_set_title(GTK_WINDOW(dialog), "Manual");
+        "• Objective: Move all your pieces from the start to the end to exit the board.\n"
+        "• Movement: Rolling 1, 4, or 5 grants you an extra throw.\n"
+        "• Protection: Two pieces of the same color side-by-side cannot be attacked.\n"
+        "• The Trap: Square 27 (The Water) sinks your piece and returns it to Square 15.");
+    gtk_window_set_title(GTK_WINDOW(dialog), "Game Manual");
     gtk_dialog_run(GTK_DIALOG(dialog));
     gtk_widget_destroy(dialog);
 }
@@ -293,15 +295,20 @@ int main(int argc, char *argv[]) {
 
     GtkCssProvider *provider = gtk_css_provider_new();
     gtk_css_provider_load_from_data(provider,
-        "window { background-color: #2c3e50; }"
-        "button { min-width: 60px; min-height: 60px; border-radius: 4px; font-weight: bold; }"
-        "button label { color: black; }"
-        "messagedialog { background-color: #ecf0f1; }"
-        "messagedialog label { color: black; }"
-        ".p1 { background-color: #e67e22; border: 3px solid #d35400; }"
-        ".p2 { background-color: #3498db; border: 3px solid #2980b9; }"
-        ".special { border: 2px dashed #f1c40f; }"
-        "label { color: white; font-size: 16px; }", -1, NULL);
+		"window { background-color: #2c3e50; }"
+		/* أزرار اللوحة الرئيسية */
+		"button { min-width: 60px; min-height: 60px; border-radius: 4px; font-weight: bold; }"
+		"button label { color: black; }" 
+		/* المربعات الحوارية (About & Help) */
+		"messagedialog label, aboutdialog label { color: black; }"
+		"messagedialog { background-color: #ecf0f1; }"
+		"aboutdialog { background-color: #ecf0f1; }"
+		/* التنسيقات الخاصة بقطع اللاعبين */
+		".p1 { background-color: #e67e22; border: 3px solid #d35400; }"
+		".p2 { background-color: #3498db; border: 3px solid #2980b9; }"
+		".special { border: 2px dashed #f1c40f; }"
+		/* نصوص اللوحة الأساسية (العداد والسكور) تظل بيضاء للخلفية الغامقة */
+		"window > box > label { color: white; font-size: 16px; }", -1, NULL);
         
     gtk_style_context_add_provider_for_screen(gdk_screen_get_default(), GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
 
